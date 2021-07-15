@@ -224,11 +224,8 @@ export class {{classname}} {
 {{/headerParams}}
 
 {{#authMethods}}
-{{#-first}}
-        let credential: string | undefined;
-{{/-first}}
         // authentication ({{name}}) required
-        credential = this.configuration.lookupCredential('{{name}}');
+        const credential = this.configuration.lookupCredential('{{name}}');
         if (credential) {
 {{#isApiKey}}
     {{#isKeyInHeader}}
